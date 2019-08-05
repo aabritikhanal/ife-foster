@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>FOSTER HOMEPAGE</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/static/assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="/static/assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<span class="image"><a href="/index"><img style = "width: 300px; height: 300px;" src="/static/images/logoo.png" alt="" /></a></span>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="#intro" class="active">Introduction</a></li>
+				<li><a href="#second">Meet The Dogs</a></li>
+				<li><a href="#first">Steps</a></li>
+				<li><a href="#cta">Log In</a></li>
+				<li><a href="/signup">Sign Up</a></li>
+				<li><a href="/service"> Shop </a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Introduction -->
+			<section id="intro" class="main">
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2>Introducing Foster. </h2>
+						</header>
+						<p>We are a pet-fostering service connecting overcrowded animal shelters with pet-lovers. We also provide a monthly subscription box filled with treats, toys, and samples for the dogs. 
+						Our mission is to make animal shelters empty. As we grow, we are planning on connecting with hospitals to train shelter dogs to become therapy dogs. It's a win-win-win-win-win.</p>
+					</div>
+					<span class="image"><img style = "width: 300px; height: 300px;" src="/static/images/dogg.jpg" alt="" /></span>
+				</div>
+			</section>
+
+			<!-- Second Section -->
+			<section id="second" class="main special">
+				<header class="major">
+					<h2>Meet The Dogs</h2>
+					<p>Here are three dogs who are in need of love and care. </p>
+				</header>
+				<ul class="statistics">
+					<li class="style1">
+						<span class="logo"><img style = "border-radius:100%; width: 200px; height: 200px;" src="/static/images/William-Wegman.jpg" alt="" /></span>
+						<!--<span class="icon solid fa-code-branch"></span>-->
+						<strong>William</strong> <br>William is reserved, intelligent, <br> and a little clumsy. [6 months old]
+						<ul class="actions">
+							<li><br><a href="/generic" class="button"> FOSTER NOW </a></li>
+						</ul>
+					</li>
+					<li class="style2">
+						<span class="logo"><img style = "border-radius:100%; width: 200px; height: 200px;" src="/static/images/doggy.jpg" alt="" /></span>
+						<!--<span class="icon fa-folder-open"></span>-->
+						<strong>Daisy</strong><br> Daisy loves attention, flowers, and long walks in the park. [4 years old]
+					<ul class="actions">
+							<li><br><a href="/generic" class="button"> FOSTER NOW </a></li>
+						</ul>
+					</li>
+					<li class="style4">
+						<span class="logo"><img style = "border-radius:100%; width: 200px; height: 200px;" src="/static/images/bby.jpg" alt="" /></span>
+						<!--<span class="icon solid fa-laptop"></span>-->
+						<strong>Jack</strong> <br>Loves to make people laugh, <br> Hates to eat vegetables. [1 year old]
+					<ul class="actions">
+							<li><br><a href="/generic" class="button"> FOSTER NOW </a></li>
+						</ul>
+					</li>
+				</ul>
+				<footer class="major">
+					<ul class="actions special">
+						<li><a href="/dog_profiles" class="button"> MORE DOGS! </a></li>
+					</ul>
+				</footer>
+			</section>
+			
+			<!-- First Section -->
+			<section id="first" class="main special">
+				<header class="major">
+					<h2>It's as easy as</h2>
+				</header>
+				<ul class="features">
+					<li>
+						<span class="image"><img src="/static/images/numberone3.png" alt="" /></span>
+						<h3>Join</h3>
+						<p>Sign up and let us know what type<br> of dog you're looking for! </p>
+					</li>
+					<li>
+						<!--<span class="icon major style3 fa-copy"></span>-->
+						<span class="image"><img src="/static/images/numbertwoo.png" alt="" /></span>
+						<h3>Search</h3>
+						<p>Find your best friend.</p>
+					</li>
+					<li>
+						<span class="image"><img src="/static/images/numberthree.png" alt="" /></span>
+						<h3>Foster</h3>
+						<p>Foster your new best friend, and <br> sign up for our subscription service.</p>
+					</li>
+				</ul>
+				<footer class="major">
+					<ul class="actions special">
+						<li><a href="/signup" class="button">Get Started</a></li>
+					</ul>
+				</footer>
+			</section>
+
+			<!-- Get Started -->
+			<section id="cta" class="main special">
+				<span class="logo"><img style = "width: 150px; height: 150px;" src="/static/images/doggy.jpg" alt="" /></span>
+				<span class="logo"><img style = "width: 150px; height: 150px;" src="/static/images/clifford.jpg" alt="" /></span>
+				<span class="logo"><img style = "width: 150px; height: 150px;" src="/static/images/ahh.jpg" alt="" /></span>
+				<span class="logo"><img style = "width: 150px; height: 150px;" src="/static/images/jack.jpg" alt="" /></span>
+				<span class="logo"><img style = "width: 150px; height: 150px;" src="/static/images/wow.jpg" alt="" /></span>
+				<header class="major">
+					<br><h2>Log in to your account</h2>
+					{% if 'username' not in session: %}
+					<form autocomplete="off" method='POST' action='/login'>
+						Username: <input type='text' name='username'> <br> Password: <input type='password' name='password'> <br>
+						<br> <input type='submit' value='Log In'>
+					</form>
+					<p>No account? <a href="/signup">Sign up here</a></p>
+					{% else: %}
+					<p>You are logged in as {{session['username']}}</p>
+					<a href="/logout">LOGOUT</a> {% endif %}
+				</header>
+				<footer class="major">
+					<ul class="actions special">
+
+					</ul>
+				</footer>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+
+			<section>
+				<h2>CONTACT US</h2>
+				<dl class="alt">
+					<dt>Address</dt>
+					<dd>1234 Somewhere Road &bull; New York, NY 00000 &bull; USA</dd>
+					<dt>Phone</dt>
+					<dd>(000) 000-0000 x 0000</dd>
+					<dt>Email</dt>
+					<dd><a href="#">contact@foster.com</a></dd>
+
+				</dl>
+
+				<a href="https://instagram.com/aabriti" class="icon brands fa-instagram alt"><span class="label">Follow Aabriti on Instagram</span></a>
+				<a href="https://www.instagram.com/mercedess.urena/" class="icon brands fa-instagram alt"><span class="label">Follow Mercedes on Instagram</span></a>
+
+			</section>
+			<section>
+				<span class="logo"><img style = "border-radius:100%; width: 200px; height: 200px;" src="/static/images/Call-me.jpg" alt="" /></span></section>
+			<p class="copyright">&copy; Foster. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		</footer>
+
+	</div>
+
+
+	<!-- Scripts -->
+	<script src="/static/assets/js/jquery.min.js"></script>
+	<script src="/static/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/static/assets/js/jquery.scrolly.min.js"></script>
+	<script src="/static/assets/js/browser.min.js"></script>
+	<script src="/static/assets/js/breakpoints.min.js"></script>
+	<script src="/static/assets/js/util.js"></script>
+	<script src="/static/assets/js/main.js"></script>
+
+</body>
+
+</html>

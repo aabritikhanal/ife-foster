@@ -1,0 +1,97 @@
+<html>
+
+<head>
+	<title>SIGN UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/static/assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="/static/assets/css/noscript.css" /></noscript>
+</head>
+
+<body>
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<span class="image"><a href="/index"><img style = "width: 300px; height: 300px;" src="/static/images/logoo.png" alt="" /></a></span>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="/index#intro" class="active">Back to Homepage</a></li>
+				<li><a href="/index#cta">Log In</a></li>
+				<li><a href="/dog_profiles"> Dog Profiles </a></li>
+				<li><a href="/service"> Shop </a></li>
+			</ul>
+		</nav>
+
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Introduction -->
+			<section id="intro" class="main">
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h1>Create A Foster Account </h1>
+							<p> after you create it, try logging in!</p>
+						</header>
+
+						<form autocomplete="off" method='POST' action='/jack_profile'>
+							<!--<h3> Full Name: </h3><input style="width:30%;" type='text' name='first name' placeholder='FIRST NAME'><input style="width:30%;" type='text' name='last name' placeholder='LAST NAME'> <br>-->
+							<!--<br>-->
+							<h3> Username: </h3><input type='text' name='username' placeholder='ENTER USERNAME'><br>
+							<br>
+							<h3>Password: </h3><input type='password' name='password' placeholder='ENTER PASSWORD'><br>
+							<br>
+							<h3> What sized dog would you prefer? (Please select one)</h3>
+							<input type="checkbox" id="small" name="small">
+							<label for="small">Small</label><br>
+							<input type="checkbox" id="medium" name="medium">
+							<label for="medium">Medium</label><br>
+							<input type="checkbox" id="large" name="large">
+							<label for="large">Large</label><br>
+							<br>
+							<h3> Breed: (Please select one) </h3>
+							<p> Note: Dog breed selections depend on current availability</p>
+							<input type="checkbox" id="jack" name="jack">
+							<label for="jack">Jack Russell Terrier</label><br>
+							<br> <input type='submit' value='Submit'><br> {% if 'username' not in session: %} {% else: %}
+							<br>
+							<a href="/logout"> LOGOUT </a> {% endif %}
+						</form>
+					</div>
+					<span class="image"><img style = "width: 300px; height: 300px;" src="/static/images/pug.jpg" alt="" /></span>
+				</div>
+			</section>
+			<!-- Get Started -->
+			<section id="cta" class="main special">
+				<span class="logo"><img style = "width: 150px; height: 150px;" src="/static/images/bby.jpg" alt="" /></span>
+				<span class="logo"><img style = "width: 150px; height: 150px;" src="/static/images/ohdog.jpg" alt="" /></span>
+				<span class="logo"><img style = "width: 150px; height: 150px;" src="/static/images/pup.jpg" alt="" /></span>
+				<span class="logo"><img style = "width: 150px; height: 150px;" src="/static/images/shy.jpg" alt="" /></span>
+				<span class="logo"><img style = "width: 150px; height: 150px;" src="/static/images/wow.jpg" alt="" /></span>
+				<br>
+				<header class="major">
+					<br>
+					<h2>Log in to your account</h2>
+					{% if 'username' not in session: %}
+					<form autocomplete="off" method='POST' action='/login'>
+						Username: <input type='text' name='username'> <br> Password: <input type='password' name='password'> <br>
+						<br> <input type='submit' value='Log In'>
+					</form>
+					{% else: %}
+					<p>You are logged in as {{session['username']}}</p>
+					<a href="/logout">LOGOUT</a> {% endif %}
+				</header>
+				<footer class="major">
+					<ul class="actions special">
+
+					</ul>
+				</footer>
+			</section>
+</body>
+
+</html>

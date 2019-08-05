@@ -1,0 +1,99 @@
+<html>
+
+<head>
+	<title>MEET CHARLIE</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/static/assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="/static/assets/css/noscript.css" /></noscript>
+</head>
+
+
+<body>
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<span class="image"><a href="/index"><img style = "width: 300px; height: 300px;" src="/static/images/logoo.png" alt="" /></a></span>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="/index#intro" class="active">Back to Homepage</a></li>
+				<li><a href="/index#cta">Log In</a></li>
+				<li><a href="/signup"> Sign Up </a></li>
+				<li><a href="/dog_profiles"> See More Dogs! </a></li>
+				<li><a href="/service"> Shop </a></li>
+			</ul>
+		</nav>
+		<div id="main">
+		<!-- Main -->
+
+			<!-- Introduction -->
+			<section id="intro" class="main">
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2>MEET CHARLIE. </h2>
+						</header>
+						<p>Charlie is an energetic medium sized Jack Rusell Terrier who is in need of a loving foster family.</p>
+						<ul class="actions">
+							<li><a href="/generic" class="button"> FOSTER NOW </a></li>
+						</ul>
+					</div>
+					<span class="image"><img style = "width: 300px; height: 300px;" src="/static/images/jack.jpg" alt="" /></span>
+				</div>
+			</section>
+	
+			<!-- Get Started -->
+			<section id="cta" class="main special">
+				<header class="major">
+					<h2>Log in to your account</h2>
+					{% if 'username' not in session: %}
+					<form autocomplete="off" method='POST' action='/login'>
+						Username: <input type='text' name='username'> <br> Password: <input type='password' name='password'> <br>
+						<br> <input type='submit' value='Log In'>
+					</form>
+					<p>No account? <a href="/signup">Sign up here</a></p>
+					{% else: %}
+					<p>You are logged in as {{session['username']}}</p>
+					<a href="/logout">LOGOUT</a> {% endif %}
+				</header>
+				<footer class="major">
+					<ul class="actions special">
+
+					</ul>
+				</footer>
+
+			</section>
+			<!-- Footer -->
+			<footer id="footer">
+
+				<section>
+					<h2>CONTACT US</h2>
+					<dl class="alt">
+						<dt>Address</dt>
+						<dd>1234 Somewhere Road &bull; New York, NY 00000 &bull; USA</dd>
+						<dt>Phone</dt>
+						<dd>(000) 000-0000 x 0000</dd>
+						<dt>Email</dt>
+						<dd><a href="#">contact@foster.com</a></dd>
+
+					</dl>
+
+					<a href="https://instagram.com/aabriti" class="icon brands fa-instagram alt"><span class="label">Follow Aabriti on Instagram</span></a>
+					<a href="https://www.instagram.com/mercedess.urena/" class="icon brands fa-instagram alt"><span class="label">Follow Mercedes on Instagram</span></a>
+
+				</section>
+				<section>
+					<span class="logo"><img style = "border-radius:100%; width: 200px; height: 200px;" src="/static/images/Call-me.jpg" alt="" /></span></section>
+				<p class="copyright">&copy; Foster. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+			</footer>
+			</div>
+</div>
+
+</body>
+
+</html>
